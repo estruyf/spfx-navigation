@@ -1,0 +1,8 @@
+# Files
+.DS_Store
+.git*
+tsconfig.json
+*.tgz
+
+# Folders
+node_modules
