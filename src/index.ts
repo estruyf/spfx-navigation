@@ -8,6 +8,7 @@ export class Navigation {
    * @param {boolean} fullPageReload - (optional) partial page reload - false / or full page reload - true
    */
   public static navigate(link: string, fullPageReload: boolean = false) {
+    const isLayoutPage = location.href.toLowerCase().indexOf("/_layouts/");
     // Check if we can bind into the SPFx navigation APIs
     if (!fullPageReload && history && (window["PopStateEvent"] || window["Event"]) && window["dispatchEvent"]) {
       // Create the new navigation state
@@ -47,6 +48,10 @@ export class Navigation {
       if (newPopState) {
         const isDispatched = window.dispatchEvent(newPopState);
         if (isDispatched) {
+          // Check if browser was loaded on the layouts page, if that was the case, trigger history go API
+          if (isLayoutPage) {
+            history.go();
+          }
           return;
         }
       }
