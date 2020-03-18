@@ -8,6 +8,11 @@ export class Navigation {
    * @param {boolean} fullPageReload - (optional) partial page reload - false / or full page reload - true
    */
   public static navigate(link: string, fullPageReload: boolean = false) {
+    //Including the protocol that you're using  
+    if (link.search(/^http[s]?\:\/\//) == -1) {
+      link = '//' + link;
+    }
+    
     const isLayoutPage = location.href.toLowerCase().indexOf("/_layouts/");
     // Check if we can bind into the SPFx navigation APIs
     if (!fullPageReload && history && (window["PopStateEvent"] || window["Event"]) && window["dispatchEvent"]) {
