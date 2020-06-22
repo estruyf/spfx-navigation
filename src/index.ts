@@ -13,7 +13,7 @@ export class Navigation {
       link = '//' + link;
     }
     
-    const isLayoutPage = location.href.toLowerCase().indexOf("/_layouts/");
+    const isLayoutPage = location.href.toLowerCase().indexOf("/_layouts/") !== -1;
     // Check if we can bind into the SPFx navigation APIs
     if (!fullPageReload && history && (window["PopStateEvent"] || window["Event"]) && window["dispatchEvent"]) {
       // Create the new navigation state
