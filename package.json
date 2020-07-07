@@ -1,6 +1,6 @@
 {
   "name": "spfx-navigation",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Dependency which helps you navigating with SPFx",
   "main": "lib/index.js",
   "scripts": {

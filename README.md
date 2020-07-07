@@ -29,3 +29,9 @@ Navigation.navigate("<your-url>", true);
 ## Issues
 
 Experiencing issues? Please add these to the dependency its issue list: [SPFx navigation issues](https://github.com/estruyf/spfx-navigation/issues).
+
+## Changes
+
+### 1.2.2
+
+- Fix build in the GitHub workflow
