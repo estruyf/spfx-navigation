@@ -10,7 +10,10 @@ export class Navigation {
   public static navigate(link: string, fullPageReload: boolean = false) {
     //Including the protocol that you're using  
     if (link.search(/^http[s]?\:\/\//) == -1) {
-      link = '//' + link;
+      //Not starting with a /
+      if(link.search(/^\//) == -1) {
+        link = '/' + link;
+      }
     }
     
     const isLayoutPage = location.href.toLowerCase().indexOf("/_layouts/") !== -1;
